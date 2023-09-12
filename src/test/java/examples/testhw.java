@@ -26,12 +26,13 @@ public class testhw {
   @Test
   void fillFormTest() {
     open("https://demoqa.com/text-box");
+  //enter values
     $("#userName").setValue("Alina");
     $("#userEmail").setValue("alina@mail.com");
     $("#currentAddress").setValue("Street");
     $("#permanentAddress").setValue("town");
     $("#submit").click();
-
+// read values
     $("#output #name").shouldHave(text("Alina"));
     $("#output #email").shouldHave(text("alina@mail.com"));
     $("#output #currentAddress").shouldHave(text("Street"));
