@@ -1,0 +1,9 @@
+.gradle
+.idea
+*.log
+!build.gradle
+build/
+!**/src/main/**
+!**/src/test/**
+
+.allure
