@@ -15,9 +15,10 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestHW2 {
 
   @BeforeAll
-  static void SetUp() {
+  static void setUp() {
     System.out.println("__setUp()");
     Configuration.browserSize="1024x800";
+    Configuration.pageLoadStrategy = "eager";
 
   }
 
@@ -50,8 +51,6 @@ public class TestHW2 {
     $("#submit").click();
 
 
-    executeJavaScript("document.getElementById('submit').click()");
-
 
     $(".modal-content").shouldHave(text("Alina N"));
     $(".modal-content").shouldHave(text("Alina@mail.com"));
@@ -59,6 +58,7 @@ public class TestHW2 {
     $(".modal-content").shouldHave(text("1234567890"));
     $(".modal-content").shouldHave(text("02 September,1990"));
     $(".modal-content").shouldHave(text("Chemistry"));
+    $(".modal-content").shouldHave(text("Reading"));
     $(".modal-content").shouldHave(text("1.png"));
     $(".modal-content").shouldHave(text("Street, appartment, home, town, district, region, country"));
     $(".modal-content").shouldHave(text("NCR Delhi"));
