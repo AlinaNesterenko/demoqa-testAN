@@ -12,19 +12,13 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TestHW2 {
+public class TestHW2 extends TestBase {
 
-  @BeforeAll
-  static void setUp() {
-    System.out.println("__setUp()");
-    Configuration.browserSize="1024x800";
-    Configuration.pageLoadStrategy = "eager";
 
-  }
 
   @Test
   void fillFormTest()  {
-    open("https://demoqa.com/automation-practice-form");
+    open("/automation-practice-form");
 
 
     executeJavaScript("$('#fixedban').remove()");
