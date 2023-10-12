@@ -2,7 +2,8 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
+import pages.components.CalendarComponent;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -10,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
   //create objects
-  CalendarComponents calendar = new CalendarComponents();
+  CalendarComponent calendar = new CalendarComponent();
   SelenideElement titleText = $(".practice-formwrapper"),
 
       firstNameInput = $("#firstName"),
@@ -72,7 +73,7 @@ public class RegistrationPage {
   public RegistrationPage setDateOfBirth(String day, String month, String year) {
 
     $("#dateOfBirthInput").click();
-    calendar.setDate("02", "September", "1990");
+    calendar.setDate(day, month, year);
 
     return this;
   }

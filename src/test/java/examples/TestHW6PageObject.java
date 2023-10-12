@@ -3,22 +3,16 @@ package examples;
 
 import org.junit.jupiter.api.Test;
 
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-
 import pages.RegistrationPage;
-import pages.ResultForm;
+import pages.components.ResultModal;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestHW6PageObject extends TestBase {
 
   RegistrationPage registrationPage = new RegistrationPage();
-  ResultForm resultForm = new ResultForm();
+  ResultModal resultForm = new ResultModal();
 
 
   @Test
