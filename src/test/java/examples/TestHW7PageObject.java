@@ -12,18 +12,7 @@ import com.github.javafaker.Faker;
 import pages.RegistrationPage;
 import pages.components.ResultModal;
 
-import static com.codeborne.selenide.Condition.text;
-import static utils.RandomUtils.getRandomAddress;
-import static utils.RandomUtils.getRandomCity;
-import static utils.RandomUtils.getRandomDay;
-import static utils.RandomUtils.getRandomEmail;
-import static utils.RandomUtils.getRandomGender;
-import static utils.RandomUtils.getRandomHobby;
-import static utils.RandomUtils.getRandomMonth;
-import static utils.RandomUtils.getRandomNumber;
-import static utils.RandomUtils.getRandomState;
-import static utils.RandomUtils.getRandomSubj;
-import static utils.RandomUtils.getRandomYear;
+
 
 
 
@@ -35,20 +24,19 @@ public class TestHW7PageObject extends TestBase {
   ResultModal resultForm = new ResultModal();
   @Test
   void fillFormTest()  {
-    Faker faker = new Faker(new Locale("en-GB") );
-    String firstName = faker.name().firstName();
-    String lastName = faker.name().lastName();
-    String userEmail = getRandomEmail();
-    String userGenter = getRandomGender();
-    String userNumber = getRandomNumber(10);
-    String userAddress = getRandomAddress();
-    String userDayB = getRandomDay();
-    String userMonthB = getRandomMonth();
-    String userYearB = getRandomYear();
-    String userSybj = getRandomSubj();
-    String userHobby = getRandomHobby();
-    String userState = getRandomState();
-    String userCity = getRandomCity(userState);
+    String firstName = testData.firstName;
+    String lastName = testData.lastName;
+    String userEmail = testData.userEmail;
+    String userGenter = testData.userGender;
+    String userNumber = testData.userNumber;
+    String userAddress = testData.userAddress;
+    String userDayB = testData.userDayB;
+    String userMonthB = testData.userMonthB;
+    String userYearB = testData.userYearB;
+    String userSybj = testData.userSubj;
+    String userHobby = testData.userHobby;
+    String userState = testData.userState;
+    String userCity = testData.userCity;
     String userPicture = testData.userImg;
 
 

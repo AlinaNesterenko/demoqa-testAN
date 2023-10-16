@@ -7,7 +7,7 @@ import com.github.javafaker.Faker;
 
 public class RandomUtils {
 
-  Faker faker = new Faker(new Locale("en-GB"));
+  static Faker faker = new Faker(new Locale("en-GB"));
 
   public static String getRandomString(int len) {
     String AB = "QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm";
@@ -83,7 +83,7 @@ public class RandomUtils {
 
   public static String getRandomState() {
     String[] states = {"NCR", "Haryana", "Rajasthan"};
-    String randomState = getRandomItemFromArray(states);
+    String randomState = faker.options().option(states);
     return randomState;
   }
 
@@ -94,11 +94,11 @@ public class RandomUtils {
 
       switch (randomState) {
         case  ("NCR"):
-          return getRandomItemFromArray(cityListNCR);
+          return faker.options().option(cityListNCR);
         case ("Haryana"):
-          return getRandomItemFromArray(cityListHar);
+          return faker.options().option(cityListHar);
         case ("Rajasthan"):
-          return getRandomItemFromArray(cityListRaj);
+          return faker.options().option(cityListRaj);
         default:
           return " ";
       }
