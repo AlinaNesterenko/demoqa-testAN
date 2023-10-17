@@ -1,20 +1,7 @@
 package examples;
-
-
-import java.util.Locale;
-import java.util.Random;
-
-import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.Test;
-
-import com.github.javafaker.Faker;
-
 import pages.RegistrationPage;
 import pages.components.ResultModal;
-
-
-
-
 
 public class TestHW7PageObject extends TestBase {
 
@@ -24,47 +11,33 @@ public class TestHW7PageObject extends TestBase {
   ResultModal resultForm = new ResultModal();
   @Test
   void fillFormTest()  {
-    String firstName = testData.firstName;
-    String lastName = testData.lastName;
-    String userEmail = testData.userEmail;
-    String userGenter = testData.userGender;
-    String userNumber = testData.userNumber;
-    String userAddress = testData.userAddress;
-    String userDayB = testData.userDayB;
-    String userMonthB = testData.userMonthB;
-    String userYearB = testData.userYearB;
-    String userSybj = testData.userSubj;
-    String userHobby = testData.userHobby;
-    String userState = testData.userState;
-    String userCity = testData.userCity;
-    String userPicture = testData.userImg;
 
 
 
     registrationPage.openPage()
-        .setFirstName(firstName)
-        .setLastName(lastName)
-        .setUserEmail(userEmail)
-        .setGender(userGenter)
-        .setUserNumber(userNumber)
-        .setDateOfBirth(userDayB, userMonthB, userYearB)
-        .setSubjects(userSybj)
-        .setHobbies(userHobby)
-        .uploadPicture(userPicture)
-        .setCurrentAddress(userAddress)
-        .setState(userState).setCity(userCity)
+        .setFirstName(testData.firstName)
+        .setLastName(testData.lastName)
+        .setUserEmail(testData.userEmail)
+        .setGender(testData.userGender)
+        .setUserNumber(testData.userNumber)
+        .setDateOfBirth(testData.userDayB, testData.userMonthB, testData.userYearB)
+        .setSubjects(testData.userSubj)
+        .setHobbies(testData.userHobby)
+        .uploadPicture(testData.userImg)
+        .setCurrentAddress(testData.userAddress)
+        .setState(testData.userState).setCity(testData.userCity)
         .submitAction();
 
-    resultForm.checkResultText("Student Name", firstName + " " + lastName)
-        .checkResultText("Student Email", userEmail)
-        .checkResultText("Mobile", userNumber)
-        .checkResultText("Gender", userGenter)
-        .checkResultText("Date of Birth", userDayB + " " + userMonthB + "," +  userYearB)
-        .checkResultText("Subjects",userSybj)
-        .checkResultText("Hobbies",userHobby)
-        .checkResultText("Picture", userPicture)
-        .checkResultText("Address",userAddress)
-        .checkResultText("State and City", userState + " " + userCity);
+    resultForm.checkResultText("Student Name", testData.firstName + " " + testData.lastName)
+        .checkResultText("Student Email", testData.userEmail)
+        .checkResultText("Mobile", testData.userNumber)
+        .checkResultText("Gender", testData.userGender)
+        .checkResultText("Date of Birth", testData.userDayB + " " + testData.userMonthB + "," +  testData.userYearB)
+        .checkResultText("Subjects",testData.userSubj)
+        .checkResultText("Hobbies",testData.userHobby)
+        .checkResultText("Picture", testData.userImg)
+        .checkResultText("Address",testData.userAddress)
+        .checkResultText("State and City", testData.userState + " " + testData.userCity);
 
 
   }

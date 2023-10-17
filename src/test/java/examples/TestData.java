@@ -1,9 +1,6 @@
 package examples;
 import java.util.Locale;
-
 import com.github.javafaker.Faker;
-
-
 import static utils.RandomUtils.getRandomCity;
 import static utils.RandomUtils.getRandomDay;
 import static utils.RandomUtils.getRandomState;
