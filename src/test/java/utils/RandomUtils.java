@@ -9,8 +9,11 @@ public class RandomUtils {
 
   public static String getRandomDay() {
     Integer intDay = faker.number().numberBetween(1,28);
-    return intDay.toString();
-  }
+    if (intDay < 10) {
+      return "0" + intDay;
+    } else {
+    return Integer.toString(intDay);
+  }}
 
   public static String getRandomYear() {
     Integer intYear = faker.number().numberBetween(1900,2018);
