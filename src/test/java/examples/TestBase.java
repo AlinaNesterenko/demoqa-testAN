@@ -1,5 +1,7 @@
 package examples;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,13 +19,15 @@ public class TestBase {
   @BeforeAll
   static void setUp() {
     Configuration.baseUrl = "https://demoqa.com";
-    Configuration.browserSize = "1024x800";
-    Configuration.pageLoadStrategy = "eager";
     Configuration.timeout = 10000;
+    Configuration.pageLoadStrategy = "eager";
     Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+    Configuration.browserSize = System.getProperty("browser_size", "1920X1280");
     DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("enableVNC", true);
-    capabilities.setCapability("enableVideo", true);
+    capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+        "enableVNC", true,
+        "enableVideo", true
+    ));
     Configuration.browserCapabilities = capabilities;
 
   }
@@ -34,7 +38,7 @@ public class TestBase {
   }
 
   @AfterEach
-  void addAttachments(){
+  void addAttachments() {
     Attach.screenshotAs("Last state");
     Attach.pageSource();
     Attach.browserConsoleLogs();
