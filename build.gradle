@@ -23,18 +23,16 @@ allure {
 }
 
 
-
 dependencies {
   implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
   implementation 'org.testng:testng:7.1.0'
-  testImplementation (
+  testImplementation(
       "com.codeborne:selenide:6.16.0",
       "org.junit.jupiter:junit-jupiter:5.10.0",
       'io.qameta.allure:allure-selenide:2.19.0',
       'com.github.javafaker:javafaker:1.0.2'
   )
-/*  testRuntimeOnly (
-      "org.slf4j:slf4j-simple:1.7.29")*/
+
 }
 
 tasks.withType(JavaCompile) {

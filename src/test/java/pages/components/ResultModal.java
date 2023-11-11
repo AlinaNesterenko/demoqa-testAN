@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class ResultModal {
 
   SelenideElement tableResult = $(".table-responsive");
+
   public ResultModal checkResultText(String key, String value) {
 
     tableResult.$(byText(key)).parent()
