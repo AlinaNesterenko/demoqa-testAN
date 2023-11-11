@@ -11,6 +11,8 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import examples.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
   @BeforeAll
   static void setUp() {
@@ -37,5 +39,7 @@ public class TestBase {
     Attach.pageSource();
     Attach.browserConsoleLogs();
     Attach.addVideo();
+
+    closeWebDriver();
   }
 }

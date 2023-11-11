@@ -1,16 +1,12 @@
 package examples;
 
-import java.nio.charset.StandardCharsets;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
-import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 
-import io.qameta.allure.Allure;
 import io.qameta.allure.selenide.AllureSelenide;
 import pages.RegistrationPage;
 import pages.components.ResultModal;
@@ -28,7 +24,7 @@ public class TestHW13Jenkins extends TestBase {
   @Tag("jenkinsTest")
   @DisplayName("Successfull Registration")
   void fillFormTest() {
-
+    //    SelenideLogger.addListener("allure", new AllureSelenide());
 
     step("Открывыем страницу регистрации", () -> {
       registrationPage.openPage();
