@@ -4,14 +4,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
 
-import com.codeborne.selenide.logevents.SelenideLogger;
-
-import io.qameta.allure.selenide.AllureSelenide;
 import pages.RegistrationPage;
 import pages.components.ResultModal;
-
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class TestHW13Jenkins extends TestBase {
 
@@ -24,7 +20,6 @@ public class TestHW13Jenkins extends TestBase {
   @Tag("jenkinsTest")
   @DisplayName("Successfull Registration")
   void fillFormTest() {
-    //    SelenideLogger.addListener("allure", new AllureSelenide());
 
     step("Открывыем страницу регистрации", () -> {
       registrationPage.openPage();
