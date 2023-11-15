@@ -18,15 +18,16 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
   @BeforeAll
   static void setUp() {
-    Configuration.baseUrl = "https://demoqa.com";
-    Configuration.timeout = 10000;
+
+  //  Configuration.timeout = 10000;
     Configuration.pageLoadStrategy = "eager";
    // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
    // Configuration.browserSize = System.getProperty("WINDOW_SIZE", "1920X1280");
-    Configuration.browser = System.getProperty("BROWSER","safari");
-    Configuration.browserVersion = System.getProperty("VERSION","16.5");
-    Configuration.browserSize = System.getProperty("WINDOW_SIZE", "1920X1280");
-    Configuration.remote = System.getProperty("REMOTE_URL", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+    Configuration.browser = System.getProperty("browser","chrome");
+    Configuration.browserVersion = System.getProperty("version","110");
+    Configuration.browserSize = System.getProperty("size", "1920X1280");
+    Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+    Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("selenoid:options", Map.<String, Object>of(
