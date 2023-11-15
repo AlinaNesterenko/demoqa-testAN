@@ -83,7 +83,7 @@ public class TestHW13Jenkins extends TestBase {
     step("Проверяем Хобби", () -> {
       resultForm.checkResultText("Hobbies", testData.userHobby);
     });
-    step("ЗПроверяем фото", () -> {
+    step("Проверяем фото", () -> {
       resultForm.checkResultText("Picture", testData.userImg);
     });
     step("Проверяем Адрес", () -> {

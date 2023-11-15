@@ -35,11 +35,16 @@ dependencies {
 
 }
 
-tasks.withType(JavaCompile) {
+compileJava {
   options.encoding = 'UTF-8'
 }
+compileTestJava {
+  options.encoding = 'UTF-8'
+}
+
 tasks.withType(Test) {
   useJUnitPlatform()
+  systemProperties(System.getProperties())
 
   testLogging {
     lifecycle {
@@ -51,6 +56,7 @@ tasks.withType(Test) {
 
 
 task jenkins_test(type: Test) {
+ // systemProperties(System.getProperties())
   useJUnitPlatform {
     includeTags("jenkinsTest")
   }
