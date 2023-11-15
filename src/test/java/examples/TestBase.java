@@ -27,9 +27,6 @@ public class TestBase {
     Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
-    System.setProperty("browser", Configuration.browser);
-    System.setProperty("version", Configuration.browserVersion);
-    System.setProperty("size", Configuration.browserSize);
     capabilities.setCapability("selenoid:options", Map.<String, Object>of(
         "enableVNC", true,
         "enableVideo", true
