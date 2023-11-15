@@ -59,7 +59,6 @@ tasks.withType(Test) {
 
 
 task jenkins_test(type: Test) {
- // systemProperties(System.getProperties())
   useJUnitPlatform {
     includeTags("jenkinsTest")
   }
